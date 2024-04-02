@@ -12,18 +12,46 @@ const personalMovieDB = {
   privat: false
 }
 
-for (let i = 1; i <= 2; i++) {
+let i = 1
+
+do {
   nameOfFilm = prompt('Один із останніх переглянутих фільмів?', '')
   ratingOfFilms = +prompt('На скільки ви його оціните?', '')
-  if (nameOfFilm !== '' && ratingOfFilms !== '' && nameOfFilm !== null && ratingOfFilms !== null && nameOfFilm.length <= 50) {
+  if (nameOfFilm !== '' && ratingOfFilms !== '' && nameOfFilm.length <= 50) {
     console.log(`You answered ${i} way correctly. Thats great!`)
     personalMovieDB.movies[nameOfFilm] = ratingOfFilms
+    i++
   } else {
     console.log(`We're sorry, but you entered a space or exceeded the 50 character limit on path ${i}. Please try again`)
-    i--
-    continue
   }
-}
+} while (i <= 2)
+
+// let i = 1
+
+// while (i <= 2) {
+//   nameOfFilm = prompt('Один із останніх переглянутих фільмів?', '')
+//   ratingOfFilms = +prompt('На скільки ви його оціните?', '')
+//   if (nameOfFilm !== '' && ratingOfFilms !== '' && nameOfFilm.length <= 50) {
+//     console.log(`You answered ${i} way correctly. Thats great!`)
+//     personalMovieDB.movies[nameOfFilm] = ratingOfFilms
+//     i++
+//   } else {
+//     console.log(`We're sorry, but you entered a space or exceeded the 50 character limit on path ${i}. Please try again`)
+//   }
+// }
+
+// for (let i = 1; i <= 2; i++) {
+//   nameOfFilm = prompt('Один із останніх переглянутих фільмів?', '')
+//   ratingOfFilms = +prompt('На скільки ви його оціните?', '')
+//   if (nameOfFilm !== '' && ratingOfFilms !== '' && nameOfFilm !== null && ratingOfFilms !== null && nameOfFilm.length <= 50) {
+//     console.log(`You answered ${i} way correctly. Thats great!`)
+//     personalMovieDB.movies[nameOfFilm] = ratingOfFilms
+//   } else {
+//     console.log(`We're sorry, but you entered a space or exceeded the 50 character limit on path ${i}. Please try again`)
+//     i--
+//     continue
+//   }
+// }
 
 if (personalMovieDB.count > 0 && personalMovieDB.count < 10) {
   console.log('Переглянуто доволі мало фільмів')
