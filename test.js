@@ -1,36 +1,20 @@
 'use strict'
 
-let result = ''
-
-for (let i = 1; i <= 5; i++) {
-  for (let j = 1; j <= i; j++) {
-    result += '*'
-  }
-  result += '\n'
-}
-
-console.log(result)
-
-/*
-const lines = 5
-let result = ''
-for (let i = 0; i <= lines; i++) {
-  for (let k = lines; k >= i; k--) {
-    if (k === i) {
-      for (let j = 0; j <= i; j++) {
-        if (j === 0) {
-          result += '*'
-        } else if (j > 0 || j === i) {
-          result += '**'
-        }
-      }
-    } else {
-      result += ' '
-      continue
+function getMathResult (base, factor) {
+  let number = base
+  if (typeof (factor) !== 'number' || factor <= 0) {
+    return number
+  } else {
+    let result = `${number}`
+    for (let i = 1; i < factor; i++) {
+      number += base
+      result += `---${number}`
     }
+    return result
   }
-  result += '\n'
 }
 
-console.log(result)
-*/
+getMathResult(5, 6)
+
+const str = 'Hello world!'
+console.log(str.substring(2, 5))
